@@ -1,0 +1,5 @@
+account = Account('svvaliv', 'no_one_will_know_my_password')
+try:
+    account.login = 'vzohan'
+except AttributeError as e:
+    print(e)

@@ -21,9 +21,18 @@ elif platform == "darwin":
 elif platform == "win32":
     python_version = 'py'
 
+main_path = pathlib.Path('main.py')
+main_content = main_path.read_text()
+
 for i in range(1, n_tests + 1):
-    with open(os.path.join(tests, str(i))) as test, open(os.path.join(tests, f'{str(i)}.clue')) as clue:
-        result = os.popen(f"{python_version} main.py < {os.path.join(tests, str(i))}").read().strip()
+    test_path = pathlib.Path(tests) / str(i)
+    clue_path = pathlib.Path(tests) / f'{str(i)}.clue'
+    with test_path.open() as test, clue_path.open() as clue:
+        combined_content = main_content + '\n' + '\n' + '\n' + test.read()
+        combined_path = pathlib.Path('combined_main.py')
+        combined_path.write_text(combined_content)
+
+        result = os.popen(f"{python_version} {combined_path} < {test_path}").read().strip()
         correct = clue.read()
         assert result == correct, f"Test#{i}\n{'-' * 69}\nexpect:{repr(correct)}\nresult:{repr(result)}\n"
     print(f'Test#{i} PASSED')

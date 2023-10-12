@@ -1,0 +1,22 @@
+Class Account
+
+For security purposes, passwords from user accounts are stored in databases not in explicit form, but in the form of hash values - numbers calculated using a special algorithm based on passwords.
+
+You have access to the hash_function() function, which takes a password as an argument and returns its hash value.
+
+Implement the Account class, which describes an Internet user account on some service. When instantiated, the class must take two arguments in the following order:
+    * login - user login
+    * password — user password
+
+The Account class must have two properties:
+
+login is a read-only property that returns the user's login. When attempting to change a property, an AttributeError exception must be raised with the text:
+    "Changing login is not possible"
+
+password - is a read/write property that returns a hash value of the user account password. When changed, the property should calculate the hash value of the new password and store it, not the password itself
+
+Note 1: Additional data verification for correctness is not required. It is guaranteed that the implemented class is used only with correct data.
+
+Note 2: There are no restrictions regarding the implementation of the Account class; it can be arbitrary.
+
+Note 3: Test data is available in the tests folder

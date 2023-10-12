@@ -1,0 +1,5 @@
+account = Account('timyr-guev', 'lovebeegeek')
+try:
+    account.login = 'timyrik30'
+except AttributeError as e:
+    print(e)

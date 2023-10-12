@@ -1,0 +1,4 @@
+account = Account('gvido', 'van_rossum')
+
+print(hasattr(account, 'login'))
+print(hasattr(account, 'password'))

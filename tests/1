@@ -1,0 +1,4 @@
+account = Account('hannymad', 'cakeisalie')
+
+print(account.login)
+print(account.password)
