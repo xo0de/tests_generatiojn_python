@@ -5,8 +5,8 @@ from sys import platform
 
 DIR = pathlib.Path(__file__).parent.resolve()  # current directory
 tests = os.path.join(DIR, 'tests')
-try:
-    n_tests = len(os.listdir(tests)) // 2  # check if there is a tests folder and a 'main.py' file
+try:                                        # check if there is a tests folder and a 'main.py' file
+    n_tests = len(os.listdir(tests)) // 2
     open('main.py')
 except FileNotFoundError as error:
     print('-' * 69, '\nERROR 404')
