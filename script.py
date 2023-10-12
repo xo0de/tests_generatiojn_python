@@ -37,3 +37,5 @@ for i in range(1, n_tests + 1):
         assert result == correct, f"Test#{i}\n{'-' * 69}\nexpect:{repr(correct)}\nresult:{repr(result)}\n"
     print(f'Test#{i} PASSED')
 print(f'Everything is fine! {n_tests} pieces checked.')
+
+combined_path.unlink()
